@@ -1,5 +1,5 @@
 class TodoList < ApplicationRecord
-  has_many :todo_items # una lista tiene muchos items
+  has_many :todo_items, dependent: :delete_all # una lista tiene muchos items
 
   # make validations for the creation of a task
   validates :title, :description, presence: true
